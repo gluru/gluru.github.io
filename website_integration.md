@@ -10,10 +10,11 @@ Before you can use the widget you will need to add the following snippet to the 
 <script>
 window.GLR = {
   appId: 'APPID-FROM-DASHBOARD',
+  subDomain: 'subdomain',
 };
 
 (function(w, d, s){
-  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://s3.eu-west-1.amazonaws.com/static.glurucdn.com/head/gluru.js';
+  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://static.glurucdn.com/head/gluru.js';
   w.GLR = w.GLR || {};
   d.getElementsByTagName('head')[0].appendChild(j);
 })(window, document, 'script');
