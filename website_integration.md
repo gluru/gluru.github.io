@@ -81,7 +81,5 @@ Configuration options to pass to `window.GLR` before widget setup.
 |--------------|-----------|--------------|
 | key          |   string  | Your client key. Required. |
 | showLauncher |   bool    | Show or hide the button launcher | 
-|  subDomain   |   string  | Your site name, e.g gluru, should match dashboard settings. Not required if using `key`|
-| siteUrl      |   string  | URL to your main website. Not required if using `key` |
-| escalateUrl  |   string  | URL to send customers if they escalate | 
+| subDomain    |   string  | Your site name, e.g gluru, should match dashboard settings. Not required if using `key`|
 | apiBase      |   string  | (Internal) Changes API host
