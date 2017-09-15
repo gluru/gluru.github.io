@@ -14,7 +14,7 @@ window.GLR = {
 };
 
 (function(w, d, s){
-  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://static.glurucdn.com/head/gluru.js';
+  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://static.glurucdn.com/1.0.0-rc.3/gluru.js';
   w.GLR = w.GLR || {};
   d.getElementsByTagName('head')[0].appendChild(j);
 })(window, document, 'script');
@@ -37,12 +37,13 @@ Add the `data-gluru-ask` attribute to a form to get Gluru to bind to it. Once an
 </form>
 
 window.GLR = {
-  appId: 'KEY-FROM-DASHBOARD',
+  appId: 'APPID-FROM-DASHBOARD',
+  subDomain: 'subdomain',
   showLauncher: false,      // Hide the button launcher 
 };
 
 (function(w, d, s){
-  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://s3-eu-west-1.amazonaws.com/gluru-widget/head/gluru.js';
+  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://static.glurucdn.com/1.0.0-rc.3/gluru.js';
   w.GLR = w.GLR || {};
   d.getElementsByTagName('head')[0].appendChild(j);
 })(window, document, 'script');
