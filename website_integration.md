@@ -51,6 +51,37 @@ window.GLR = {
 
 ```
 
+## Z-Index Issues
+If you find that there is some incorrect overlapping of elements on your website and the AskBar then you may need to adjust its Z-Index.
+
+The Z-Index is a CSS property that allows you to adjust the z-order of elements on a page. You set the Z-Index to a number and and element with a higher number will appear on top of an element with a lower number.
+
+For more inofrmations see: [https://developer.mozilla.org/en-US/docs/Web/CSS/z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index).
+
+You can adjust the Z-Index (and other CSS properties) of the AskBar in the following ways:
+
+### Using inline styles
+```
+<form data-gluru-ask style="z-index: 300;">
+    <input type="text" spellcheck>
+    <input type="submit" value="Ask a question">
+</form>
+```
+
+### Using external stylesheets
+```
+<form class="my-ask-bar" data-gluru-ask style="z-index: 300;">
+    <input type="text" spellcheck>
+    <input type="submit" value="Ask a question">
+</form>
+```
+Then in your stylesheet:
+```
+.my-ask-bar {
+  z-index: 300;
+}
+```
+
 # Launching Programmatically 
 
 The widget can be launched in all variants through the Javascript API, the API can be accessed via the `window.gluru`.
