@@ -95,4 +95,4 @@ Configuration options to pass to `window.GLR` before widget setup.
 | siteUrl      |   string  | URL to your main website. Not required if using `key` |
 | escalateUrl  |   string  | URL to send customers if they escalate | 
 | apiBase      |   string  | (Internal) Changes API host
-| highlightArticleHits | bool | Default: true. If enabled, highlights hit sentences when on the resolution link page |
+| highlightArticleHits | bool | **Experimental** Default: false. If enabled, highlights hit sentences when on the resolution link page |
