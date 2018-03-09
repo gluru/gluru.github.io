@@ -1,10 +1,8 @@
-# Javascript SDK
-
 This documentation covers the different ways you can setup and present Gluru MIND widget on your website.
 
 The widget comes in two variants, the first is `docked` and sits in the bottom right of the page and the other is `dialog`, which sits in the center of the page. It can be triggered with a button launcher (default), binding to a search form, or launching via calling the javascript API.
 
-## Installation
+# Installation
 
 Before you can use the widget you will need to add the following snippet to the website you wish to track. This will enabled the docked widget with button launcher by default. See [Advanced Configuration](#advanced-configuration) to change this behaviour.
 
@@ -22,7 +20,7 @@ window.GLR = {
 </script>
 ```
 
-## AskBar 
+# AskBar 
 
 __Note, the search bar is still in early development and the API around it is likely to change.__
 
@@ -51,7 +49,7 @@ window.GLR = {
 
 ```
 
-## Recipes
+# Recipes
 
 The Javascript SDK allows web developers to control the widget programmatically.
 
@@ -66,7 +64,7 @@ window.gluru.openDialog({
 
 ```
 
-### Inside a web page
+## Inside a web page
 
 ```
 <button onclick="window.gluru.openDialog();">Open help window as dialog</button>
@@ -75,7 +73,7 @@ window.gluru.openDialog({
 <button onclick="window.gluru.close();">Close the widget</button>
 ```
 
-### API
+## API
 
 | Property             |  Type   | Value            |
 |----------------------|---------|------------------|
@@ -84,7 +82,7 @@ window.gluru.openDialog({
 | close()  | method  | closes the widget window completely 
 
 
-## Advanced configuration
+# Advanced configuration
 
 Configuration options to pass to `window.GLR` before widget setup.
 
@@ -95,4 +93,20 @@ Configuration options to pass to `window.GLR` before widget setup.
 | siteUrl      |   string  | URL to your main website. Not required if using `key` |
 | escalateUrl  |   string  | URL to send customers if they escalate | 
 | apiBase      |   string  | (Internal) Changes API host
-| highlightArticleHits | bool | **Experimental** Default: false. If enabled, highlights hit sentences when on the resolution link page |
+| highlightArticleHits | bool | **experimental** Default: false. If enabled, highlights hit sentences when on the resolution link page |
+
+# Angular 1 apps
+## Show/hide widget depending on certain pages
+In order to show or hide the widget on certain page in Angular 1 apps you'll need to listen to route changes.
+Using the `$routeChangeSuccess` from the `$route` API (https://docs.angularjs.org/api/ngRoute/service/$route#$routeChangeSuccess) you can change the style to show or hide it.
+
+For example, if you need to hide the widget on a `routeWhereWidgetIsHidden` route your code would look like:
+```
+$scope.$on('$routeChangeSuccess', function(event, current) {
+    if (current.title === 'routeWhereWidgetIsHidden') {
+        document.getElementsByClassName('glr-launcher')[0].style.display = 'none';
+    } else {
+        document.getElementsByClassName('glr-launcher')[0].style.display = 'block';
+    }
+});
+```
