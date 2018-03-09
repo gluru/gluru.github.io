@@ -1,8 +1,10 @@
+# Javascript SDK
+
 This documentation covers the different ways you can setup and present Gluru MIND widget on your website.
 
 The widget comes in two variants, the first is `docked` and sits in the bottom right of the page and the other is `dialog`, which sits in the center of the page. It can be triggered with a button launcher (default), binding to a search form, or launching via calling the javascript API.
 
-# Installation
+## Installation
 
 Before you can use the widget you will need to add the following snippet to the website you wish to track. This will enabled the docked widget with button launcher by default. See [Advanced Configuration](#advanced-configuration) to change this behaviour.
 
@@ -20,7 +22,7 @@ window.GLR = {
 </script>
 ```
 
-# AskBar 
+## AskBar 
 
 __Note, the search bar is still in early development and the API around it is likely to change.__
 
@@ -49,7 +51,7 @@ window.GLR = {
 
 ```
 
-# Recipes
+## Recipes
 
 The Javascript SDK allows web developers to control the widget programmatically.
 
@@ -64,7 +66,7 @@ window.gluru.openDialog({
 
 ```
 
-## Inside a web page
+### Inside a web page
 
 ```
 <button onclick="window.gluru.openDialog();">Open help window as dialog</button>
@@ -73,7 +75,7 @@ window.gluru.openDialog({
 <button onclick="window.gluru.close();">Close the widget</button>
 ```
 
-## API
+### API
 
 | Property             |  Type   | Value            |
 |----------------------|---------|------------------|
@@ -82,7 +84,7 @@ window.gluru.openDialog({
 | close()  | method  | closes the widget window completely 
 
 
-# Advanced configuration
+## Advanced configuration
 
 Configuration options to pass to `window.GLR` before widget setup.
 
