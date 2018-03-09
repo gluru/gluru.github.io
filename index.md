@@ -7,7 +7,7 @@ This document will guide trough configuring and using Gluru MIND.
 ### Account creation
 ### Onboarding knowledge
 ### Website integration
-To integrate the Widget and the AskBar with your website follow the [javascript integration](website_integration)
+To integrate the Widget and the AskBar with your website follow the [javascript SDK](javascript_sdk)
 
 ### Acceptance testing
 
