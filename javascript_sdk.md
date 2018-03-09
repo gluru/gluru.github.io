@@ -10,11 +10,10 @@ Before you can use the widget you will need to add the following snippet to the 
 <script>
 window.GLR = {
   appId: 'APPID-FROM-DASHBOARD',
-  subDomain: 'subdomain',
 };
 
 (function(w, d, s){
-  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://static.glurucdn.com/1.0.0-rc.3/gluru.js';
+  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://s3.eu-west-1.amazonaws.com/static.glurucdn.com/head/gluru.js';
   w.GLR = w.GLR || {};
   d.getElementsByTagName('head')[0].appendChild(j);
 })(window, document, 'script');
@@ -37,13 +36,12 @@ Add the `data-gluru-ask` attribute to a form to get Gluru to bind to it. Once an
 </form>
 
 window.GLR = {
-  appId: 'APPID-FROM-DASHBOARD',
-  subDomain: 'subdomain',
+  appId: 'KEY-FROM-DASHBOARD',
   showLauncher: false,      // Hide the button launcher 
 };
 
 (function(w, d, s){
-  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://static.glurucdn.com/1.0.0-rc.3/gluru.js';
+  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://s3-eu-west-1.amazonaws.com/gluru-widget/head/gluru.js';
   w.GLR = w.GLR || {};
   d.getElementsByTagName('head')[0].appendChild(j);
 })(window, document, 'script');
@@ -51,42 +49,13 @@ window.GLR = {
 
 ```
 
-## Z-Index Issues
-If you find that there is some incorrect overlapping of elements on your website and the AskBar then you may need to adjust its Z-Index.
+# Recipes
 
-The Z-Index is a CSS property that allows you to adjust the z-order of elements on a page. You set the Z-Index to a number and and element with a higher number will appear on top of an element with a lower number.
+The Javascript SDK allows web developers to control the widget programmatically.
 
-For more inofrmations see: [https://developer.mozilla.org/en-US/docs/Web/CSS/z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index).
-
-You can adjust the Z-Index (and other CSS properties) of the AskBar in the following ways:
-
-### Using inline styles
-```
-<form data-gluru-ask style="z-index: 300;">
-    <input type="text" spellcheck>
-    <input type="submit" value="Ask a question">
-</form>
-```
-
-### Using external stylesheets
-```
-<form class="my-ask-bar" data-gluru-ask style="z-index: 300;">
-    <input type="text" spellcheck>
-    <input type="submit" value="Ask a question">
-</form>
-```
-Then in your stylesheet:
-```
-.my-ask-bar {
-  z-index: 300;
-}
-```
-
-# Launching Programmatically 
+## Launching Programmatically with Javascript
 
 The widget can be launched in all variants through the Javascript API, the API can be accessed via the `window.gluru`.
-
-## Example
 
 ```
 window.gluru.openDialog({
@@ -95,13 +64,22 @@ window.gluru.openDialog({
 
 ```
 
+## Inside a web page
+
+```
+<button onclick="window.gluru.openDialog();">Open help window as dialog</button>
+<button onclick="window.gluru.open();">Open at side of page</button>
+<button onclick="window.gluru.open({ query: 'How can I track my order?' });">Open with query</button>
+<button onclick="window.gluru.close();">Close the widget</button>
+```
+
 ## API
 
 | Property             |  Type   | Value            |
 |----------------------|---------|------------------|
-| showDialog({query})  | method  | Shows the dialog and starts a chat with "query" |  
-| onInit(cb)           | method  | NOT IMPLEMENTED  |
-
+| openDialog({query})  | method  | opens the dialog in the center of the page and starts a session with "query" as the first question |  
+| open({query})  | method  | opens the widget bottom right and starts a session with "query" as the first question |  
+| close()  | method  | closes the widget window completely 
 
 
 # Advanced configuration
@@ -112,5 +90,7 @@ Configuration options to pass to `window.GLR` before widget setup.
 |--------------|-----------|--------------|
 | key          |   string  | Your client key. Required. |
 | showLauncher |   bool    | Show or hide the button launcher | 
-| subDomain    |   string  | Your site name, e.g gluru, should match dashboard settings. Not required if using `key`|
+| siteUrl      |   string  | URL to your main website. Not required if using `key` |
+| escalateUrl  |   string  | URL to send customers if they escalate | 
 | apiBase      |   string  | (Internal) Changes API host
+| highlightArticleHits | bool | Default: true. If enabled, highlights hit sentences when on the resolution link page |
