@@ -9,7 +9,7 @@ Before you can use the widget you will need to add the following snippet to the 
 ```
 <script>
 window.GLR = {
-  appId: 'APPID-FROM-DASHBOARD',
+  appId: 'APPID-FROM-CONSOLE',
 };
 
 (function(w, d, s){
@@ -36,7 +36,7 @@ Add the `data-gluru-ask` attribute to a form to get Gluru to bind to it. Once an
 </form>
 
 window.GLR = {
-  appId: 'KEY-FROM-DASHBOARD',
+  appId: 'KEY-FROM-CONSOLE',
   showLauncher: false,      // Hide the button launcher 
 };
 
