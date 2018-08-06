@@ -55,13 +55,22 @@ The Javascript SDK allows web developers to control the widget programmatically.
 
 ## Launching Programmatically with Javascript
 
-The widget can be launched in all variants through the Javascript API, the API can be accessed via the `window.gluru`.
+The widget can be launched in all variants through the Javascript API, the API can be accessed via the `window.kare`.
 
 ```
-window.gluru.openDialog({
-   query: 'How can I review my order?',
-});
+window.kare.open();
+```
 
+```
+window.kare.close();
+```
+
+```
+window.kare.showLauncher();
+```
+
+```
+window.kare.hideLauncher();
 ```
 
 ## Inside a web page
