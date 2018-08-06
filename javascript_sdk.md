@@ -86,8 +86,7 @@ window.kare.hideLauncher();
 
 | Property             |  Type   | Value            |
 |----------------------|---------|------------------|
-| openDialog({query})  | method  | opens the dialog in the center of the page and starts a session with "query" as the first question |  
-| open({query})  | method  | opens the widget bottom right and starts a session with "query" as the first question |  
+| open()  | method  | opens the widget bottom right and starts a session |  
 | close()  | method  | closes the widget window completely 
 
 
