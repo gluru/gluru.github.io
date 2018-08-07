@@ -1,8 +1,10 @@
+# Kare MIND Widget
+
 This documentation explains how to setup and present Kare MIND widget on your website.
 
 It can be triggered with a button launcher (default), or launching via calling the javascript API.
 
-# Installation
+## Installation
 
 Before you can use the widget you will need to add the following snippet to the website you wish to track. This will enabled the docked widget with button launcher by default. See [Advanced Configuration](#advanced-configuration) to change this behaviour.
 
@@ -57,7 +59,7 @@ window.kare.showLauncher();
 window.kare.hideLauncher();
 ```
 
-## Inside a web page
+### Inside a web page
 
 ```
 <button onclick="window.kare.open();">Open at side of page</button>
@@ -65,7 +67,7 @@ window.kare.hideLauncher();
 <button onclick="window.kare.close();">Close the widget</button>
 ```
 
-## API
+### API
 
 | Property             |  Type   | Value            |
 |----------------------|---------|------------------|
@@ -75,8 +77,8 @@ window.kare.hideLauncher();
 | hideLauncher()  | method  | Hide the widget launcher |
 
 
-# Angular 1 apps
-## Show/hide widget depending on certain pages
+## Angular 1 apps
+### Show/hide widget depending on certain pages
 In order to show or hide the widget on certain page in Angular 1 apps you'll need to listen to route changes.
 Using the `$routeChangeSuccess` from the `$route` API (https://docs.angularjs.org/api/ngRoute/service/$route#$routeChangeSuccess) you can change the style to show or hide it.
 
