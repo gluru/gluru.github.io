@@ -1,16 +1,19 @@
-This documentation covers the different ways you can setup and present Kare MIND widget on your website.
+This documentation explains how to setup and present Kare MIND widget on your website.
 
-The widget comes in two variants, the first is `docked` and sits in the bottom right of the page and the other is `dialog`, which sits in the center of the page. It can be triggered with a button launcher (default), or launching via calling the javascript API.
+It can be triggered with a button launcher (default), or launching via calling the javascript API.
 
 # Installation
 
 Before you can use the widget you will need to add the following snippet to the website you wish to track. This will enabled the docked widget with button launcher by default. See [Advanced Configuration](#advanced-configuration) to change this behaviour.
+
+**Please use the snippet from the settings page in your console. The appId here is just an example. Also, the environment of the widget source is location dependent. This example uses the `us` environment but yours may differ.**
 
 
 ```
 <script>
 window.GLR = {
   appId: 'APPID-FROM-CONSOLE',
+  showLauncher: false
 };
 
 (function(w, d, s){
@@ -20,6 +23,15 @@ window.GLR = {
 })(window, document, 'script');
 </script>
 ```
+
+# Advanced configuration
+
+Configuration options to pass to `window.GLR` before widget setup.
+
+|  Property    |   Type    |  Description |
+|--------------|-----------|--------------|
+| key          |   string  | Your client key. Required. |
+| showLauncher |   bool    | Show or hide the button launcher. Defaults to `true`. Useful if you want to use your own custom button to launch the widget. |
 
 # Recipes
 
@@ -57,20 +69,11 @@ window.kare.hideLauncher();
 
 | Property             |  Type   | Value            |
 |----------------------|---------|------------------|
-| open()  | method  | opens the widget bottom right and starts a session |  
-| close()  | method  | closes the widget window completely |
+| open()  | method  | Opens the widget bottom right and starts a session |  
+| close()  | method  | Closes the widget window completely |
 | showLauncher()  | method  | Show the widget launcher |
 | hideLauncher()  | method  | Hide the widget launcher |
 
-
-# Advanced configuration
-
-Configuration options to pass to `window.GLR` before widget setup.
-
-|  Property    |   Type    |  Description |
-|--------------|-----------|--------------|
-| key          |   string  | Your client key. Required. |
-| showLauncher |   bool    | Show or hide the button launcher |
 
 # Angular 1 apps
 ## Show/hide widget depending on certain pages
