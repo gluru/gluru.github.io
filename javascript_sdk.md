@@ -34,6 +34,24 @@ Configuration options to pass to `window.GLR` before widget setup.
 |--------------|-----------|--------------|
 | key          |   string  | Your client key. Required. |
 | showLauncher |   bool    | Show or hide the button launcher. Defaults to `true`. Useful if you want to use your own custom button to launch the widget. |
+| isFullscreen | bool      | Loads the widget in fullscreen. This removes navigation so the end-user cannot close the widget. This is ideal for mobile app webviews.|
+
+## Fullscreen
+
+In order to make the widget fullscreen on a particular page you can either add the `isFullscreen` property to the `GLR` object. For example:
+
+```
+window.GLR = {
+  appId: 'APPID-FROM-CONSOLE',
+  isFullscreen: true
+};
+```
+
+or you can add the `fullscreen` querystring to the parent URL. For example:
+
+```
+https://www.page-where-widget-is-loaded.com?fullscreen
+```
 
 # Recipes
 
