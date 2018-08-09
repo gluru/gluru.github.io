@@ -47,10 +47,10 @@ window.GLR = {
 };
 ```
 
-or you can add the `fullscreen` querystring to the parent URL. For example:
+or you can add the `isFullscreen` querystring to the parent URL. For example:
 
 ```
-https://www.page-where-widget-is-loaded.com?fullscreen
+https://www.page-where-widget-is-loaded.com?isFullscreen
 ```
 
 # Recipes
