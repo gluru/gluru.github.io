@@ -33,18 +33,10 @@ Configuration options to pass to `window.GLR` before widget setup.
 |  Property    |   Type    |  Description |
 |--------------|-----------|--------------|
 | appId        |   string  | Your client key. Required. |
-| showLauncher |   bool    | Show or hide the button launcher. Defaults to `true`. Useful if you want to use your own custom button to launch the widget. |
+| showLauncher |   bool    | Show or hide the button launcher. Defaults to `true`. Useful if you want to use your own custom button to launch the widget. Optional. |
 | isFullscreen | bool      | Loads the widget in fullscreen. This removes navigation so the end-user cannot close the widget. This is ideal for mobile app webviews.|
-| userId          |   string  | Set the user id in the config. This will get set down on initialization can will appear in the console. Optional.|
-| customHeaders   |   Object  | Send down custom headers to the backend so add metadata to your customers’ conversations. Only custom headers that start with “Kare-Meta-” will be accepted. Any headers that do not follow this pattern will be ignored and will not be sent.
-Example:
-```
-{
-  “Kare-Meta-my-custom-header”: “my-custom-value”,
-  “Kare-Meta-custom-header-two”: 123
-}
-```
-|
+| userId          |   string  | Set the user id in the config. This will get sent down on initialization can will appear in the console. Optional.|
+| customHeaders   |   Object  | Send down custom headers to the backend so add metadata to your customers’ conversations. Only custom headers that start with “Kare-Meta-” will be accepted. Any headers that do not follow this pattern will be ignored and will not be sent. Optional. |
 
 
 ## Fullscreen
@@ -54,7 +46,12 @@ In order to make the widget fullscreen on a particular page you can either add t
 ```
 window.GLR = {
   appId: 'APPID-FROM-CONSOLE',
-  isFullscreen: true
+  isFullscreen: true,
+  userId: 'my-unique-user-id',
+  customHeaders: {
+    'Kare-Meta-my-custom-header': 'my-custom-value',
+    'Kare-Meta-custom-header-two': 123
+  }
 };
 ```
 
