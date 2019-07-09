@@ -134,4 +134,13 @@ The API can also be used inside a webpage on html element events.
 ```
 
 
-
+<script>
+  window.GLR = {
+    appId: 'dd940b54-b7d6-4372-9829-9287218bfb00'
+  };
+  (function(w, d, s){
+    var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
+    w.GLR = w.GLR || {};
+    d.getElementsByTagName('head')[0].appendChild(j);
+  })(window, document, 'script');
+</script>
