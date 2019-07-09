@@ -1,6 +1,6 @@
-# Welcome to Gluru MIND
+# Welcome to Kare MIND
 
-This document will guide trough configuring and using Gluru MIND.
+This document will guide trough configuring and using Kare MIND.
 
 ## Initial set-up
 
@@ -11,7 +11,7 @@ To integrate the Widget and the AskBar with your website follow the [javascript 
 
 ### Acceptance testing
 
-## Using Gluru MIND
+## Using Kare MIND
 
 ### Maintaining your knowledge base
 ### Creating accounts
