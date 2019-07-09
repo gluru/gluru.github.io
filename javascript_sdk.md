@@ -101,20 +101,15 @@ window.kare.hideLauncher();
 | close()  | method  | Closes the widget window completely |
 | showLauncher()  | method  | Show the widget launcher |
 | hideLauncher()  | method  | Hide the widget launcher |
+| onClose(callback)  | method  | Calls the callback that has been passed as an argument when the widget is closed. We send the conversation ID as a parameter to the callback method. Example: kare.onClose(function(event){console.log('my custom close callback')}) This will log ‘my custom close callback’ |
+| onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
+| onEscalate(callback)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
 
 
-## Angular 1 apps
-### Show/hide widget depending on certain pages
-In order to show or hide the widget on certain page in Angular 1 apps you'll need to listen to route changes.
-Using the `$routeChangeSuccess` from the `$route` API (https://docs.angularjs.org/api/ngRoute/service/$route#$routeChangeSuccess) you can change the style to show or hide it.
+**All callbacks methods will be invoked with a single event parameters which looks like the following.**
 
-For example, if you need to hide the widget on a `routeWhereWidgetIsHidden` route your code would look like:
-```
-$scope.$on('$routeChangeSuccess', function(event, current) {
-    if (current.title === 'routeWhereWidgetIsHidden') {
-        document.getElementsByClassName('glr-launcher')[0].style.display = 'none';
-    } else {
-        document.getElementsByClassName('glr-launcher')[0].style.display = 'block';
-    }
-});
-```
+```callbackEvent{
+    “conversationId”: “<id>”, // the conversation ID assigned by the server
+    “createdAt”: “<time_stamp>” // event timestamp (assigned by the Javascript SDK)
+}```
+
