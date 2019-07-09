@@ -6,7 +6,7 @@ It can be triggered with a button launcher (default), or launching via calling t
 
 ## Installation
 
-Before you can use the widget you will need to add the following snippet to the website you wish to track. This will enabled the docked widget with button launcher by default. See [Advanced Configuration](#advanced-configuration) to change this behaviour.
+Before you can use the widget you will need to add the following snippet to the website you wish to track. This will enabled the widget with button launcher by default. See [Advanced Configuration](#advanced-configuration) to change this behaviour.
 
 **Please use the snippet from the settings page in your console. The appId here is just an example. Also, the environment of the widget source is location dependent. This example uses the `us` environment but yours may differ.**
 
@@ -14,8 +14,7 @@ Before you can use the widget you will need to add the following snippet to the 
 ```
 <script>
 window.GLR = {
-  appId: 'APPID-FROM-CONSOLE',
-  showLauncher: false
+  appId: 'APPID-FROM-CONSOLE'
 };
 
 (function(w, d, s){
@@ -61,13 +60,22 @@ or you can add the `isFullscreen` querystring to the parent URL. For example:
 https://www.page-where-widget-is-loaded.com?isFullscreen
 ```
 
-# Recipes
+# API
 
-The Javascript SDK allows web developers to control the widget programmatically.
+The Javascript SDK allows web developers to control the widget programmatically. The API can be accessed via the `window.kare`.
 
-## Launching Programmatically with Javascript
+| Property             |  Type   | Value            |
+|----------------------|---------|------------------|
+| open()  | method  | Opens the widget bottom right and starts a session |  
+| close()  | method  | Closes the widget window completely |
+| showLauncher()  | method  | Show the widget launcher |
+| hideLauncher()  | method  | Hide the widget launcher |
+| onClose(callback)  | method  | Calls the callback that has been passed as an argument when the widget is closed. We send the conversation ID as a parameter to the callback method. Example: `kare.onClose(function(event){console.log('my custom close callback')})`. This will log ‘my custom close callback’ |
+| onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
+| onEscalate(callback)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
 
-The widget can be launched in all variants through the Javascript API, the API can be accessed via the `window.kare`.
+
+## Launching the widget programmatically with Javascript.
 
 ```
 window.kare.open();
@@ -85,28 +93,29 @@ window.kare.showLauncher();
 window.kare.hideLauncher();
 ```
 
-### Inside a web page
+## Setting event handles programmatically with Javascript.
 
 ```
-<button onclick="window.kare.open();">Open at side of page</button>
-<button onclick="window.kare.open({ query: 'How can I track my order?' });">Open with query</button>
-<button onclick="window.kare.close();">Close the widget</button>
+window.kare.onClose(function(event){
+  console.log('Widget was closed.', event.conversationId, event.createdAt)
+});
 ```
 
-### API
+```
+window.kare.onOpen(function(event){
+  console.log('Widget was opened.', event.conversationId, event.createdAt)
+});
+```
 
-| Property             |  Type   | Value            |
-|----------------------|---------|------------------|
-| open()  | method  | Opens the widget bottom right and starts a session |  
-| close()  | method  | Closes the widget window completely |
-| showLauncher()  | method  | Show the widget launcher |
-| hideLauncher()  | method  | Hide the widget launcher |
-| onClose(callback)  | method  | Calls the callback that has been passed as an argument when the widget is closed. We send the conversation ID as a parameter to the callback method. Example: `kare.onClose(function(event){console.log('my custom close callback')})`. This will log ‘my custom close callback’ |
-| onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
-| onEscalate(callback)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
+```
+window.kare.onEscalate(function(event){
+  console.log('Widget escaltion was triggered.', event.conversationId, event.createdAt)
+});
+```
 
+### Callbacks
 
-**All callbacks methods will be invoked with a single event parameters which looks like the following.**
+All callbacks methods will be invoked with a single event parameters which looks like the following.
 
 ```
 callbackEvent {
@@ -114,4 +123,16 @@ callbackEvent {
     “createdAt”: “<time_stamp>” // event timestamp (assigned by the Javascript SDK)
 }
 ```
+
+## Inside a web page
+
+The API can also be used inside a webpage on html element events.
+
+```
+<button onclick="window.kare.open();">Open at side of page</button>
+<button onclick="window.kare.open({ query: 'How can I track my order?' });">Open with query</button>
+<button onclick="window.kare.close();">Close the widget</button>
+```
+
+
 
