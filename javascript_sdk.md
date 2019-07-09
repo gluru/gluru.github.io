@@ -130,7 +130,6 @@ The API can also be used inside a webpage on html element events.
 
 ```
 <button onclick="window.kare.open();">Open at side of page</button>
-<button onclick="window.kare.open({ query: 'How can I track my order?' });">Open with query</button>
 <button onclick="window.kare.close();">Close the widget</button>
 ```
 
