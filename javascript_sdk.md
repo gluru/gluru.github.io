@@ -101,15 +101,21 @@ window.kare.hideLauncher();
 | close()  | method  | Closes the widget window completely |
 | showLauncher()  | method  | Show the widget launcher |
 | hideLauncher()  | method  | Hide the widget launcher |
-| onClose(callback)  | method  | Calls the callback that has been passed as an argument when the widget is closed. We send the conversation ID as a parameter to the callback method. Example: kare.onClose(function(event){console.log('my custom close callback')}) This will log ‘my custom close callback’ |
+| onClose(callback)  | method  | Calls the callback that has been passed as an argument when the widget is closed. We send the conversation ID as a parameter to the callback method. Example:
+```
+kare.onClose(function(event){console.log('my custom close callback')})
+```
+This will log ‘my custom close callback’ |
 | onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
 | onEscalate(callback)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
 
 
 **All callbacks methods will be invoked with a single event parameters which looks like the following.**
 
-```callbackEvent{
+```
+callbackEvent {
     “conversationId”: “<id>”, // the conversation ID assigned by the server
     “createdAt”: “<time_stamp>” // event timestamp (assigned by the Javascript SDK)
-}```
+}
+```
 
