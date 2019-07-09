@@ -93,7 +93,7 @@ window.kare.showLauncher();
 window.kare.hideLauncher();
 ```
 
-## Setting event handles programmatically with Javascript.
+## Setting event handlers programmatically with Javascript.
 
 ```
 window.kare.onClose(function(event){
