@@ -2,17 +2,23 @@
 
 Welcome to the MIND's devevelopers knowledgebase. Here you will find instructions on how to use Kare's APIs and SDKs in order to customise your experience. 
 
+## APIs and SDKs
 
-## Javascript SDK, Widget and Website integration
+### Javascript SDK, Widget and Website integration
 
-The simplest way to integrate the Widget with your website is by using the[Javascript SDK](./javascript-sdk). The JS-SDK documentation explains how to enable the Widget as well as how to configure custom operations such as callbacks and profiling. 
+The simplest way to integrate the Widget with your website is by using the [Javascript SDK](./javascript-sdk). The JS-SDK documentation explains how to enable the Widget as well as how to configure custom operations such as callbacks and profiling. 
 
 It is also possible to use our JS-SDK in conjunction with [Google Tag Manager (GTM) section](./google-tag-manager). GTM facilitates to enable advanced features such as [custom events tracking](./tracking-documentation), A/B testing and/or to load the Widget with different configurations.
 
 
-## REST APIs
+### REST APIs
 
 To explore our REST apis please see the following [REST APIs](http://gluru-docs.s3-website-eu-west-1.amazonaws.com/public/)
+
+## Research, publications and patents
+
+Our research is available through our [research lab](https://www.researchgate.net/lab/KARE-Knowledgeware-Michele-Sama) hosted by Research Gate. 
+
 
 <script>
   window.GLR = {
