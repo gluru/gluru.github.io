@@ -26,7 +26,9 @@ To explore our REST apis please see the following [REST APIs](http://gluru-docs.
 </script>
 
 ## Custom callbacks
+
 To see how to add your own callbacks to our widget events you can check the documentation and examples [here](./custom-callbacks).
 
 ## Google Tag Manager integration
+
 If you need some help to add our widget using GTM, you can check our [Google Tag Manager section](./google-tag-manager)
