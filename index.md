@@ -10,6 +10,7 @@ The simplest way to integrate the Widget with your website is by using the [Java
 
 It is also possible to use our JS-SDK in conjunction with [Google Tag Manager (GTM) section](./google-tag-manager). GTM facilitates to enable advanced features such as [custom events tracking](./tracking-documentation), A/B testing and/or to load the Widget with different configurations.
 
+To see how to add your own **callbacks** to our widget events you can check the documentation and examples [here](./custom-callbacks).
 
 ### REST APIs
 
@@ -30,11 +31,3 @@ Our research is available through our [research lab](https://www.researchgate.ne
     d.getElementsByTagName('head')[0].appendChild(j);
   })(window, document, 'script');
 </script>
-
-## Custom callbacks
-
-To see how to add your own callbacks to our widget events you can check the documentation and examples [here](./custom-callbacks).
-
-## Google Tag Manager integration
-
-If you need some help to add our widget using GTM, you can check our [Google Tag Manager section](./google-tag-manager)
