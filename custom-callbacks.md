@@ -8,10 +8,9 @@ This is a custom callback you can use to trigger your own methods when a user cl
 
 **Example**
 
-<div classname="u-margin-bottom">
 
              
- ```
+```
 kare.onClose(function(orgId) {
   console.log('my custom close callback');
 });
