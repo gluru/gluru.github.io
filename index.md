@@ -1,12 +1,17 @@
 # Welcome to Kare MIND
 
 ## Tracking Documentation
-You can read how to track events to widget actions on our [tracking documentation](./tracking-documentation)
+
 
 ## Javascript SDK, Widget and Website integration
-To integrate the Widget with your website follow the [javascript SDK](./javascript-sdk)
+
+The simplest way to integrate the Widget with your website is by using the[Javascript SDK](./javascript-sdk). The Javascript SDK documentation explains how to enable the Widget as well as how to configure custom operations such as callbacks and profiling. 
+
+It is also possible to use our Javascript SDK in conjunction with [Google Tag Manager](./tracking-documentation). GTM can be used to for advanced events tracking as well as to do A/B testing and/or to load the Widget with different configurations.
+
 
 ## REST APIs
+
 To explore our REST apis please see the following [REST APIs](http://gluru-docs.s3-website-eu-west-1.amazonaws.com/public/)
 
 <script>
