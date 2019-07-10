@@ -7,8 +7,6 @@ This is a custom callback you can use to trigger your own methods when a user cl
 `kare.onClose(callback)`
 
 **Example**
-
-
              
 ```
 kare.onClose(function(orgId) {
@@ -16,6 +14,7 @@ kare.onClose(function(orgId) {
 });
 
 ```
+
 ## IMPORTANT:
 
 Custom callbacks must be added **after** our widget has loaded.
