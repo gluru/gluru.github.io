@@ -19,3 +19,6 @@ To explore our REST apis please see the following [REST APIs](http://gluru-docs.
     d.getElementsByTagName('head')[0].appendChild(j);
   })(window, document, 'script');
 </script>
+
+## Google Tag Manager integration
+If you need some help to add our widget using GTM, you can check our [Google Tag Manager section](./google-tag-manager)
