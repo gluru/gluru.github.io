@@ -27,7 +27,7 @@ Notice how we add our callbacks after the event `load` of our script is called.
         appId: '190931b6-d139-4c2b-a3ff-144ad89bc38a'
       };
       (function(w, d, s){
-        var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.stg.karehq.com/latest.js';
+        var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
         w.GLR = w.GLR || {};
         d.getElementsByTagName('head')[0].appendChild(j);
 
