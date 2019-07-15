@@ -78,28 +78,28 @@ If built standalone the UI should:
 
 If built as a plugin of an existing ecosystem the user will already be authenticated with the third party and therefore only steps #2 and #3 are required.
 
-## Additional considerations
+# Additional considerations
 
-### Hosting
+## Hosting
 DF is an extremely data intensive component which should ideally be hosted in
 the same geographical area as either the third party service or MIND. It should
 also be deployed in a data centre capable of transferring that amount of data.
 Ideally the DF should be deployed in different geographical areas and hit the
 MIND environment in which the customer data is stored.
 
-### Data privacy considerations
+## Data privacy considerations
 The DF only needs to store the credentials that are used to transfer data, and
 doesn’t need to persist any other data.
 
-### White labelling the product
+## White labelling the product
 MIND Widget and Admin Console are branded products while the APIs are not
 branded. Integrators willing to hide Kare’s brand from their customers should
 use the APIs.
 
-## Case studies
+# Case studies
 Here we discuss various possible implementations in various ecosystems.
 
-### Magento
+## Magento
 Magento has a marketplace which contains customer supports plug-ins,
 including FAQs modules and live chat. Most of those plugins are commercial.
 
@@ -117,12 +117,12 @@ Use MIND resolutions to apply custom actions leveraging Magento APIs.
 This would allow to connect MIND responses with custom actions implemented by
 this plugin.
 
-#### Plugin structure
+## Plugin structure
 A possible implementation of a magento plugin will have two components a
 frontend living inside Magento and built as a Magento extension and a web
 service to do the knowledge fetching.
 
-#### How to apply custom actions
+## How to apply custom actions
 Custom actions can be achieved by following these steps. When a new account is
 created or connected to this plugin, using the /v2/resolutions for each action
 to be supported a resolution should be created with, in the resolution body a
