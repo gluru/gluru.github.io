@@ -131,7 +131,7 @@ permalink to the effect of an action which the user will be prompted to perform.
 For instance a resolution “What’s my balance?” can be resolved by prompting the
 URL in which the user will find its balance.
 
-Useful links
-https://marketplace.magento.com/extensions/customer-support.html
-https://devdocs.magento.com/videos/fundamentals/create-a-new-module/
-https://www.magestore.com/magento-2-tutorial/magento-extension-development/
+Useful links:
+ *  https://marketplace.magento.com/extensions/customer-support.html
+ *  https://devdocs.magento.com/videos/fundamentals/create-a-new-module/
+ *  https://www.magestore.com/magento-2-tutorial/magento-extension-development/
