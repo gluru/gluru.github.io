@@ -18,7 +18,7 @@ window.GLR = {
 };
 
 (function(w, d, s){
-  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://gluru-widget.eu.gluru.co/latest.js';
+  var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
   w.GLR = w.GLR || {};
   d.getElementsByTagName('head')[0].appendChild(j);
 })(window, document, 'script');
@@ -133,7 +133,6 @@ The API can also be used inside a webpage on html element events.
 <button onclick="window.kare.close();">Close the widget</button>
 ```
 
-
 <script>
   window.GLR = {
     appId: 'dd940b54-b7d6-4372-9829-9287218bfb00'
@@ -144,3 +143,107 @@ The API can also be used inside a webpage on html element events.
     d.getElementsByTagName('head')[0].appendChild(j);
   })(window, document, 'script');
 </script>
+
+## Showing and hiding the widget depending on the current page
+
+There may be some instances that you will want to show or hide the widget and/or launcher based on the page that the user is on. For instance, you may only want to show the widget on the contact us page. (E.g https://yourdomain.com/contact-us).
+
+How you do this depends on how your website is structured. Do you have a single page application or a multiple page application? Do you use a common header and footer for every page? We'll go through some common scenarios and hopefully they well help. If you still can't manage to display the widget in the way you would like please don't hesitate to get in touch with us.
+
+### Important
+
+If the widget is loaded on a page it is always there, whether you see it or not. Using the API described above you can open and close the widget and you can show and hide the launcher button. If you decide to hide the launcher button, then the user will not be able to open the widget unless you specifically supply an action that the user can perform to open the widget (using our API).
+
+### Scenarios
+
+#### Multiple page application
+
+Usually you'll know if you have a multiple page application because the web pages will completely refresh when you change page.
+
+**You need to know if you have a common header and/or footer for each page, or if each page is completely different.**
+
+##### Each page is different
+
+If each page is completely different then all you need to do to show the widget on one page is put the widget script on that page.
+
+##### Common header/footer
+
+If you have a common header and/or footer then you can put the Kare widget script in the header or footer of your website with the `showLauncher` flag set to `false` and then call the kare API `kare.showLauncher()` to make it visible on the page that you want to show it on. For example:
+
+```
+  <script>
+    window.GLR = {
+      appId: 'APPID-FROM-CONSOLE',
+      showLauncher: false
+    };
+    (function(w, d, s){
+      var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
+      w.GLR = w.GLR || {};
+      d.getElementsByTagName('head')[0].appendChild(j);
+    })(window, document, 'script');
+  </script>
+```
+
+Then, in your client-side code you could show the launcher programatically:
+
+```
+  if (page === 'contact-us') {
+    kare.showLauncher();
+  }
+```
+
+##### Loading the widget conditionally server-side 
+
+If you are using a server-side technology you could use this to load the widget on just one page.
+
+For example with a php website you could do something like this:
+
+```
+<?php if ($page === 'contact-us'){ ?>
+
+  <script>
+    window.GLR = {
+      appId: 'APPID-FROM-CONSOLE'
+    };
+    (function(w, d, s){
+      var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
+      w.GLR = w.GLR || {};
+      d.getElementsByTagName('head')[0].appendChild(j);
+    })(window, document, 'script');
+  </script>
+
+<?php } ?>
+```
+
+### Single page application
+
+If your website is a single page application then you'll likely load our widget once. If you want to show the widget on just one page (or specific pages) then best thing to do would be to load it with the launcher hidden by default:
+
+```
+  <script>
+    window.GLR = {
+      appId: 'APPID-FROM-CONSOLE',
+      showLauncher: false
+    };
+    (function(w, d, s){
+      var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
+      w.GLR = w.GLR || {};
+      d.getElementsByTagName('head')[0].appendChild(j);
+    })(window, document, 'script');
+  </script>
+```
+
+Then in your page load handler you'll need to do something like this (Please note this is pseudocode and the actual implementation will depend on your application and programming language):
+
+```
+  onPageLoad(page => {
+    if (page === 'contact-us') {
+      // If the current page is contact us, then show the launcher.
+      kare.showLauncher();
+    } else {
+      // Otherwise, hide the launcher and close the widget.
+      kare.hideLauncher();
+      kare.close();
+    }
+  });
+```
