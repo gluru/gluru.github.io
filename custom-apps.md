@@ -142,7 +142,7 @@ are doing.
 Params:
  * `m`: the message to echo.
 
-Example: `print -m="<msg>"`.
+Example: `print -m="Some text"`.
 
 ### Send
 
