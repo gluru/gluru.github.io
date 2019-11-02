@@ -3,9 +3,8 @@
 Welcome to the MIND's devevelopers knowledgebase. Here you will find instructions
 on how to use Kare's APIs and SDKs in order to customise your experience.
 
-## APIs and SDKs
 
-### Javascript SDK, Widget and Website integration
+# Javascript SDK, Widget and Website integration
 
 The simplest way to integrate the Widget with your website is by using the
 [Javascript SDK](./javascript-sdk). The JS-SDK documentation explains how to
@@ -19,20 +18,23 @@ A/B testing and/or to load the Widget with different configurations.
 To see how to add your own **callbacks** to our widget events you can check the
 documentation and examples [here](./custom-callbacks).
 
-### REST APIs
+# REST APIs
 
 To explore our REST apis please see the following [REST APIs](http://gluru-docs.s3-website-eu-west-1.amazonaws.com/public/)
 
-### Importing documents and ingesting data
+Customers can extend the platform by creating
+[custom applications](./custom-apps) using the APIs.
 
-Customers and integrators can extend the platform by creating
+## Importing documents and ingesting data
+
+Customers can extend the platform by creating
 [custom data fetchers](./custom-fetchers) to import data from sources that are
 not yet officially supported or to implement custom features.
 
 For security purposes, if required by your network configuration, it is also
 possible to [white-list Kare's fetchers IP](./whitelisting).
 
-## Research, publications and patents
+# Research, publications and patents
 
 Our research is available through our [research lab](https://www.researchgate.net/lab/KARE-Knowledgeware-Michele-Sama) hosted by Research Gate.
 
