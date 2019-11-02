@@ -91,7 +91,7 @@ websocket. Once the websocket is connected client and server can exchange
 messages asynchronously.
 
 ```
-curl 'wss://socket.stg.karehq.com/ws?app_id={{ YOUR APP ID }}&conversation_id={{ YOUR CONV ID }}&host_locale=&selected_locale=&user_id=' -H 'Accept-Encoding: gzip, deflate, br' -H 'Accept-Language: en-US,en;q=0.9' -H 'Sec-WebSocket-Key: RI6iut3VmqXfX4bTygG0Cw==' -H 'Upgrade: websocket' -H 'Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits' -H 'Cache-Control: no-cache' -H 'Connection: Upgrade' -H 'Sec-WebSocket-Version: 13' --compressed
+curl 'wss://socket.stg.karehq.com/ws?app_id={{ YOUR APP ID }}&conversation_id={{ YOUR CONV ID }}&host_locale=&selected_locale=&user_id=' -H 'Accept-Encoding: gzip, deflate, br' -H 'Accept-Language: en-US,en;q=0.9' -H 'Sec-WebSocket-Key: {{ KEY }}' -H 'Upgrade: websocket' -H 'Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits' -H 'Cache-Control: no-cache' -H 'Connection: Upgrade' -H 'Sec-WebSocket-Version: 13' --compressed
 ```
 
 For convenience the WS can also authenticate the client implicitly using the
