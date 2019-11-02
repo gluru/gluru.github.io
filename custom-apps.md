@@ -133,35 +133,51 @@ When triggered actions request the client to execute a certain command. The dial
 engine uses commands to describe the desired behaviour to the client, and ideally
 clients should try to comply with the request to the best of their capabilities.
 
+### Print
+
 `print` instructs the client to print a message in the conversation on behalf
 of the user. This is intended to give the user a visual aid on what his actions
 are doing.
+
 Params:
  * `m`: the message to echo.
 
 Example: `print -m="<msg>"`.
 
+### Send
+
 `send` instructs the client to send a message to the server. This is used so
 that the server can log the action and respond to it.
+
 Params:
  * `m`: the message to post.
 
 Example: `send -m=<msg>`.
 
+### Close
+
 `close` instructs the client to close and terminate. This normally indicates
 that the conversation has been escalated or is ended.
+
 Example: `close`.
 
+### Open 
+
 `open` instructs the widget to open a resource.
+
 Params:
  * `href`: the url target to open in a new window.
  * `mailto`: an email address to open with the system mail client.
  * `ext`: an extension to open. These are hardcoded in the widget.
  * `escalate`: used to run the escalation script.
  * `zopim`: used to open Zopim, if present.
+
 Example: `open -href="https://foo.biz"`
 
+### Update 
+
 `update` changes the property of an action.
+
 Params:
  * `context`: update the context of an action.
  * `enabled`: enables or disables an action.
