@@ -7,6 +7,7 @@ This document assumes that a third party data source has data or resources
 which can be imported as MIND documents.
 
 # Authentication
+
 DFs need to authenticate both with the third party source and with MIND in
 order to read data from one and import it in the other.
 
@@ -87,6 +88,8 @@ If built as a plugin of an existing ecosystem the user will already be
 authenticated with the third party and therefore only steps #2 and #3 are required.
 
 # Additional considerations
+
+Some final details.
 
 ## Hosting
 

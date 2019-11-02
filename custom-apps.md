@@ -138,12 +138,14 @@ of the user. This is intended to give the user a visual aid on what his actions
 are doing.
 Params:
  * `m`: the message to echo.
+
 Example: `print -m="<msg>"`.
 
 `send` instructs the client to send a message to the server. This is used so
 that the server can log the action and respond to it.
 Params:
  * `m`: the message to post.
+
 Example: `send -m=<msg>`.
 
 `close` instructs the client to close and terminate. This normally indicates
@@ -165,6 +167,7 @@ Params:
  * `enabled`: enables or disables an action.
  * `icon`: sets the value of an icon.
  * `text`: sets the text of an action.
+ 
 Example: `update -context="warning"`.  
 
 ## Icons
