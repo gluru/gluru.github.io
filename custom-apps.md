@@ -97,11 +97,6 @@ curl 'wss://socket.stg.karehq.com/ws?app_id={{ YOUR APP ID }}&conversation_id={{
 For convenience the WS can also authenticate the client implicitly using the
 `app_id` instead of a bearer token.
 
-## User tracking
-
-It is possible to trace the user across multiple conversations by passing
-the `user_id` url parameter when establishing the connection.
-
 ## Messages and communication flow.
 
 The communication flow happens by exchanging messages between the client and
@@ -226,6 +221,48 @@ the following aspects.
  *  `language/unknown`: a message stating a problem while detecting which
     language was used.
 
+## Advanced tracking
+
+The protocol facilitates the collection of signals to better understand the
+user and to monitor their behaviour. 
+
+### User tracking
+
+It is possible to trace the user across multiple conversations by passing
+the `user_id` url parameter when establishing the connection.
+
+### Metadata
+
+The engine automatically logs as metadata all url parameters starting with
+the `kare-meta-` prefix as indicated in the [JavascriptSDK](./javascript-sdk)
+documentation. 
+
+
+### Tracking custom events
+
+Clients can track their own events by sending `in/click` messages with the 
+right aspect. The following is an example with a `open/link` aspect. 
+
+When creating a custom event it is important to assign the `parent_id` of
+the message used to show the content to the user. The client can assign the
+new events an `id` as long as it is a valid uuid, otherwise the engine will
+auto assign one.
+
+```
+{
+  "id":"458d130b-633c-42bd-91d3-bfce6c7f0006",
+  "parent_id":"f2975053-0a74-4948-9a80-63ba157157c1",
+  "uri":"in/click",
+  "header":{},
+  "body":{
+    "target":{
+      "aspect":"open/link",
+      "choice_id":"https://developer.karehq.com/custom-apps",
+      "text":"Kare developer portal"
+    }
+  }
+}
+```
 
 # Using the REST interface
 
