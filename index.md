@@ -38,6 +38,10 @@ possible to [white-list Kare's fetchers IP](./whitelisting).
 
 Our research is available through our [research lab](https://www.researchgate.net/lab/KARE-Knowledgeware-Michele-Sama) hosted by Research Gate.
 
+# System status
+
+It's possible to receive live status updates by subscring to our [status page](https://karehq.statuspage.io/).
+
 
 <script>
   window.GLR = {
