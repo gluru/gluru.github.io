@@ -1,0 +1,62 @@
+# Kare MIND Widget recipes for custom behaviours
+In this section you can find different snippets to modify the widget behavior.
+
+1. Open the widget only in certain times
+
+
+
+# 1. Open the widget only in certain times
+
+If you decide to only show the widget to the user in specific hours during the week you can copy paste this code recipe
+in your page
+
+```javascript
+<script>
+window.GLR = {
+  appId: '441f5fb0-db0d-46f2-80ed-3459fddddd4d'
+};
+
+(function(w, d, s) {
+  var j = document.createElement(s);
+  j.async = 1;
+  j.type = 'text/javascript';
+  j.src = 'https://widget.stg.karehq.com/latest.js';
+  w.GLR = w.GLR || {};
+  d.getElementsByTagName('head')[0].appendChild(j);
+  j.addEventListener('load', () => {
+    var days = {
+      0: 'sunday',
+      1: 'monday',
+      2: 'tuesday',
+      3: 'wednesday',
+      4: 'thursday',
+      5: 'friday',
+      6: 'saturday'
+    };
+    //Add your time ranges
+    var openHours = {
+      sunday: [[0, 9], [22, 23]],
+      monday: [[0, 9], [22, 23]],
+      tuesday: [[0, 9], [18, 23]],
+      wednesday: [[0, 9], [18, 23]],
+      thursday: [[0, 9], [18, 23]],
+      friday: [[0, 9], [18, 13]],
+      saturday: [[0, 9], [18, 23]]
+    };
+
+    var d = new Date();
+    var day = days[d.getDay()];
+    var currentHour = d.getHours();
+    var hourRanges = openHours[day];
+    window.kare.hideLauncher();
+    for (let i = 0; i < hourRanges.length; i++) {
+      var range = hourRanges[i];
+      if (range[0] <= currentHour && currentHour <= range[1]) {
+        window.kare.showLauncher();
+        break;
+      }
+    }
+  });
+})(window, document, 'script');
+</script>
+```
