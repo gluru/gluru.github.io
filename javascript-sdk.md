@@ -132,8 +132,8 @@ window.addEventListener('load', ()=>{
     window.kare.onEscalate(event => {
         const zopim = window.$zopim
         if (zopim) {
-          Kare.close();
-          Kare.hideLauncher();
+          window.kare.close();
+          window.kare.hideLauncher();
           // Set userID to zopim.
           // Its accessible from window.GLR.userId
           return zopim.livechat.window.show();
