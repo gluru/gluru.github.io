@@ -98,7 +98,8 @@ window.kare.hideLauncher();
 ```
 window.addEventListener('load', ()=>{
      window.kare.onClose(function(event){
-      console.log('Widget was closed.', event.conversationId, event.createdAt)
+      console.log('Widget was closed.', event.conversationId, 
+        event.createdAt)
     });
 })
 ```
@@ -106,7 +107,8 @@ window.addEventListener('load', ()=>{
 ```
 window.addEventListener('load', ()=>{
      window.kare.onOpen(function(event){
-      console.log('Widget was opened.', event.conversationId, event.createdAt)
+      console.log('Widget was opened.', event.conversationId, 
+        event.createdAt)
     });
 })
 
