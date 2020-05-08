@@ -96,21 +96,28 @@ window.kare.hideLauncher();
 ## Setting event handlers programmatically with Javascript.
 
 ```
-window.kare.onClose(function(event){
-  console.log('Widget was closed.', event.conversationId, event.createdAt)
-});
+window.addEventListener('load', ()=>{
+     window.kare.onClose(function(event){
+      console.log('Widget was closed.', event.conversationId, event.createdAt)
+    });
+})
 ```
 
 ```
-window.kare.onOpen(function(event){
-  console.log('Widget was opened.', event.conversationId, event.createdAt)
-});
+window.addEventListener('load', ()=>{
+     window.kare.onOpen(function(event){
+      console.log('Widget was opened.', event.conversationId, event.createdAt)
+    });
+})
+
 ```
 
 ```
-window.kare.onEscalate(function(event){
-  console.log('Widget escaltion was triggered.', event.conversationId, event.createdAt)
-});
+window.addEventListener('load', ()=>{
+    window.kare.onEscalate(event => {
+      console.log(`open zoppin with conversation id ${event.conversationId}`);
+    });
+})
 ```
 
 ### Callbacks
