@@ -120,6 +120,30 @@ window.addEventListener('load', ()=>{
 })
 ```
 
+Example of an onEscalate using the userId to open Zoppin, the Zendesk chat app.
+
+The userID can be obtained from `window.GLR.userId`
+
+```
+window.addEventListener('load', ()=>{
+    window.kare.onEscalate(event => {
+        const zopim = get(Window, [
+                        '$zopim',
+                        'livechat',
+                        'window',
+                        'show'
+                      ]);
+        if (zopim) {
+          Kare.close();
+          Kare.hideLauncher();
+          // Set userID to zopim.
+          // Its accessible from window.GLR.userId
+          return zopim();
+        }
+    });
+})
+```
+
 ### Callbacks
 
 All callbacks methods will be invoked with a single event parameters which looks like the following.
