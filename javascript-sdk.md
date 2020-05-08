@@ -115,7 +115,8 @@ window.addEventListener('load', ()=>{
 ```
 window.addEventListener('load', ()=>{
     window.kare.onEscalate(event => {
-      console.log(`open zoppin with conversation id ${event.conversationId}`);
+      console.log(`open zoppin with conversation id 
+        ${event.conversationId}`);
     });
 })
 ```
