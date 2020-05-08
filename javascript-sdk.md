@@ -130,18 +130,13 @@ The userID can be obtained from `window.GLR.userId`
 ```
 window.addEventListener('load', ()=>{
     window.kare.onEscalate(event => {
-        const zopim = get(Window, [
-                        '$zopim',
-                        'livechat',
-                        'window',
-                        'show'
-                      ]);
+        const zopim = window.$zopim
         if (zopim) {
           Kare.close();
           Kare.hideLauncher();
           // Set userID to zopim.
           // Its accessible from window.GLR.userId
-          return zopim();
+          return zopim.livechat.window.show();
         }
     });
 })
