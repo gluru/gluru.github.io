@@ -10,6 +10,6 @@ the NAT IP address as indicated in the followign table.
 
 | Environment | IP |
 | ----------- | -- |
-| Multi-tennancy EU | 104.199.44.45 |
+| Multi-tennancy EU | 192.158.31.22 |
 | Multi-tennancy US | 35.188.108.210 |
 | Single tennancy| please consult your customer success contact |
