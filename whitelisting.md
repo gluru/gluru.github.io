@@ -12,4 +12,3 @@ the NAT IP address as indicated in the followign table.
 | ----------- | -- |
 | Multi-tennancy EU | 192.158.31.22 |
 | Multi-tennancy US | 35.188.108.210 |
-| Single tennancy| please consult your customer success contact |
