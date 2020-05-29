@@ -14,7 +14,7 @@ var openHours = {
       wednesday: [[9, 13]],
       thursday: [[9, 13]],
       friday: [[9, 13]],
-      saturday: [[0, 23], []]
+      saturday: []
     };
 ```
 
