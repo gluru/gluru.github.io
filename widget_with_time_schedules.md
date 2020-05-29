@@ -18,7 +18,7 @@ var openHours = {
     };
 ```
 
-```javascript class:"lineNo"
+```javascript
 window.GLR = {
   appId: 'app-id-of-the-organisation'
 };
