@@ -36,7 +36,10 @@ Configuration options to pass to `window.GLR` before widget setup.
 | isFullscreen | bool      | Loads the widget in fullscreen. This removes navigation so the end-user cannot close the widget. This is ideal for mobile app webviews.|
 | userId          |   string  | Set the user id in the config. This will get sent down on initialization can will appear in the console. Optional.|
 | customHeaders   |   Object  | Send down custom headers to the backend so add metadata to your customers’ conversations. Only custom headers that start with “kare-meta-” will be accepted. Any headers that do not follow this pattern will be ignored and will not be sent. Optional. |
+| query | string | Starting query the widget will send when opened |
+| welcomeMessageId | string | Id of the response that the widget will welcome the user when its opened and connected |
 
+If query or welcomeMessageId are configured at the level of `window.GLR` object, the widget will send the query or welcome with that response every time the user opens a new session. In case you prefer to configure this behavior dynamically in function of the actions of the user you could use the method [`open` from the API](#API)
 
 ## Fullscreen
 
@@ -66,7 +69,7 @@ The Javascript SDK allows web developers to control the widget programmatically.
 
 | Property             |  Type   | Value            |
 |----------------------|---------|------------------|
-| open()  | method  | Opens the widget bottom right and starts a session |  
+| open({query = undefined, welcomeMessageId=undefined})  | method  | Opens the widget bottom right and starts a session. If query or welcomeMessageId are specified, it will open the widget sending that query or welcoming the user with that response.  |  
 | close()  | method  | Closes the widget window completely |
 | showLauncher()  | method  | Show the widget launcher |
 | hideLauncher()  | method  | Hide the widget launcher |
@@ -77,19 +80,22 @@ The Javascript SDK allows web developers to control the widget programmatically.
 
 ## Launching the widget programmatically with Javascript.
 
-```
+```javascript
 window.kare.open();
 ```
-
+```javascript
+window.kare.open({query:'What is your business about?'})
 ```
+
+```javascript
 window.kare.close();
 ```
 
-```
+```javascript
 window.kare.showLauncher();
 ```
 
-```
+```javascript
 window.kare.hideLauncher();
 ```
 
