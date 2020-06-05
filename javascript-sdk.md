@@ -84,7 +84,7 @@ The Javascript SDK allows web developers to control the widget programmatically.
 window.kare.open();
 ```
 ```javascript
-window.kare.open({query:'What is your business about?'})
+window.kare.open({query:'How can I add a payment method?'})
 ```
 
 ```javascript
