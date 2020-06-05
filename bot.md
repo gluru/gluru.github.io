@@ -5,6 +5,7 @@ Once added to the list of resources to be imported the target website will recei
 
 
 Webmasters can identify the KareBot by looking for the following signature: 
+
 ```KareBot/0.2 (https://developer.karehq.com/bot)```
 
 
@@ -17,7 +18,7 @@ contain knowledge that should be indexed.
 Knowledge managers can configure the behviour of the KareBot from the control panel of the Kare cosole. 
 
 
-Webmaster can apply robots rules with the followign signature:
+Webmaster can apply robots rules by targeting the `KareBot` agent. For instance with the following exampe a webmaster could only allow articles and faqs while blockign everythign else. 
 
 ```
 User-agent: KareBot
