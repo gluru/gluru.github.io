@@ -32,9 +32,13 @@ Customers can extend the platform by creating
 
 ## Importing documents and ingesting data
 
+The platform provides built-in integrations and a powerful [webcrawler](./bot).
+
+
 Customers can extend the platform by creating
 [custom data fetchers](./custom-fetchers) to import data from sources that are
 not yet officially supported or to implement custom features.
+
 
 For security purposes, if required by your network configuration, it is also
 possible to [white-list Kare's fetchers IP](./whitelisting).
