@@ -1,4 +1,4 @@
-## Open widget with the query 'Where is my order {order_number}'
+## Open widget with the query 'Where is my order'
 
 Imagine you have a page where the user can see a list of his orders. And you want to provide an easy way for the user to ask for more details about every order. 
 
