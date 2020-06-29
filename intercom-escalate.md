@@ -1,6 +1,6 @@
 # Escalate to Intercom
 Custom pre populated message
-```
+```javascript
  kare.onEscalate(e => {
   const Intercom = window.Intercom;
   if (Intercom) {
@@ -15,13 +15,10 @@ Custom pre populated message
 ```
 
 Using last Kare Widget message to prepopulate Intercom
-```
+```javascript
  kare.onEscalate(e => {
     const Intercom = window.Intercom;
     if (Intercom) {
-      /**
-       * Open Intercom with a pre populated message
-       **/
       if (lastMessages && lastMessages.length > 0) {
         let lastMessage = null;
         if (lastMessages.length === 1) {
