@@ -19,6 +19,7 @@ Using last Kare Widget message to prepopulate Intercom
  kare.onEscalate(e => {
     const Intercom = window.Intercom;
     if (Intercom) {
+      const lastMessages = $(".chat__user-query-message.chat__message");
       if (lastMessages && lastMessages.length > 0) {
         let lastMessage = null;
         if (lastMessages.length === 1) {
