@@ -1,22 +1,14 @@
-## Custom callbacks
-
-This is a custom callback you can use to trigger your own methods when a user closes the widget. We send the organisation ID to your callback as a single parameter so you can use it if you need it.
-
-
-
-`kare.onClose(callback)`
-
-**Example**
-             
-```
-kare.onClose(function(orgId) {
-  console.log('my custom close callback');
-});
-
-```
+## List of current available callbacks
+### kare.onClose
+Executed when the widget is minimized
+### kare.onEscalate
+Executed when the user escalates
+### kare.onOpen
+Executed when the widget opens (normally when the user clicks on the FAB)
+### kare.onBeforeSocketOpen
+Executed just before we try to connect to the websocket. This connection is not established if the user does not open the widget.
 
 ## IMPORTANT:
-
 Custom callbacks must be added **after** our widget has loaded.
 
 Notice how we add our callbacks after the event `load` of our script is called.
@@ -33,13 +25,16 @@ Notice how we add our callbacks after the event `load` of our script is called.
 
         j.addEventListener('load', () => {
           kare.onClose(function(orgId) {
-            console.log('my custom close callback');
+            console.log('my custom onClose callback');
           });
           kare.onEscalate(function(orgId) {
-            console.log('my custom escalate callback');
+            console.log('my custom onEscalate callback');
           });
           kare.onOpen(function(orgId) {
-            console.log('my custom open callback');
+            console.log('my custom onOpen callback');
+          });          
+          kare.onBeforeSocketOpen(function(orgId) {
+            console.log('my custom onBeforeSocketOpen callback');
           });
         });
       })(window, document, 'script');
