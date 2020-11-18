@@ -1,7 +1,8 @@
 ## Beacons
 
-Beacons is a new feature available to increase engagment of your users. It allow you to add another entry point to the conversation with a specific response attached to it. Thus when the user clicks on this beacon, the widget opens 
-showing that response as a welcome message. 
+Beacons is a new feature available to increase engagment of your users. Allows you to add another entry point to the conversation with a specific response attached to it. A beacon can be useful to start a conversation with a specific response related with what the user is concerned about.
+
+For instance, it would be possible to add a little _tooltip_ in every FAQ entry to expand information for that FAQ. 
 
 # Syntax
 > window.kare.addBeacon(_beaconConfiguration_)
