@@ -5,7 +5,8 @@ Beacons is a new feature available to increase engagment of your users. Allows y
 For instance, it would be possible to add a little _tooltip_ in every FAQ entry to expand information for that FAQ. 
 
 # Syntax
-> window.kare.addBeacon(_beaconConfiguration_)
+
+### window.kare.addBeacon(_beaconConfiguration_)
 
 
 ## BeaconConfiguration object fields
