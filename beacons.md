@@ -42,7 +42,7 @@ Callback to be call when the beacon is clicked. Optional
 Callback to be call when the beacon could not be parsed correctly. Useful to track not working beacons. Optional
 
 
-**Example**
+# Example
 
 A beacon is composed of two parts:
 
