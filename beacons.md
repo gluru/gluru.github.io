@@ -36,15 +36,15 @@ Id of the html element that is going to beacome the visible part of the beacon. 
 
  > onLoad
 
-Callback to be call when the beacon is correctly parsed and can be rendered to the user. Optional
+onLoad callback will be executed when the beacon is correct and can be rendered to the user. Optional
 
  > onOpen
 
-Callback to be call when the beacon is clicked. Optional
+onOpen callback will be executed when the html element linked to the beacon is clicked. Optional
 
  > onFail
 
-Callback to be call when the beacon could not be parsed correctly. Useful to track not working beacons. Optional
+onFail callback will be executed when the beacon could not be parsed correctly. For instance the response linked to the beacon is not published. Optional
 
 
 # Example
