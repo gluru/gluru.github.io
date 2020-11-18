@@ -9,6 +9,10 @@ For instance, it would be possible to add a little _tooltip_ in every FAQ entry 
 ### window.kare.addBeacon(_beaconConfiguration_)
 
 
+
+
+
+
 ## BeaconConfiguration object fields
  > beaconName
     
@@ -20,11 +24,11 @@ Type of the beacon. One of the following ['tooltip', 'search', 'other']. Require
 
  > welcomeId
 
-Response id used to link this beacon and the conversation. Every click to this beacon will trigger to render that response in the widget. Required one between `welcomeId` and `previewId`
+Response id used to link this beacon and the conversation. Every click to this beacon will trigger a render of that response in the widget. Required one between `welcomeId` and `previewId`
   
  > previewId
 
-Response id used to link this beacon as a popup. A click to this beacon will open a popoup rendering the response. Required one between `welcomeId` and `previewId`
+Response id used to link this beacon as a popup. A click to this beacon will open a popoup showing the response. Required one between `welcomeId` and `previewId`
 
  > htmlClickableElementId
 
