@@ -53,7 +53,7 @@ A beacon is composed of two parts:
 
 Any html clickable element in your website:
 
-```
+```html
 <! demo.html>
 <head>
 ...
@@ -66,7 +66,7 @@ Any html clickable element in your website:
 
 An a piece of javascript code you need to call in order to register that html beacon to the widget.
 
-```
+```javascript
 <script>
 window.onload = () => {
 
