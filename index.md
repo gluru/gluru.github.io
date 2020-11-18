@@ -18,6 +18,8 @@ A/B testing and/or to load the Widget with different configurations.
 To see how to add your own **callbacks** to our widget events you can check the
 documentation and examples [here](./custom-callbacks).
 
+To see how to add beacons to your website follow this documentation: [Beacons](./beacons.md)
+
 To see code how to modify the behaviour of the widget see different code snippets and examples [here](./snippets)
 
 # Code snippets
