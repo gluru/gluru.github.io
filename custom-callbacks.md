@@ -1,4 +1,5 @@
 
+
 ## List of current available callbacks
 All of the following callbacks are called with a required first parameter and may have additional parameters.
 The required first parameter that we pass to all callbacks when calling them has this structure:
@@ -24,9 +25,9 @@ The structure of the parameter is the following:
 ```
 
 The different `aspect`s can be: 
- - 'resolution/missing'  in case of a "Contact us" escalation.
- - 'resolution/answer/handover' in case of a handover
- - 'titlebar' if the user clicked the escalation button in the titlebar (if it's enabled)
+ - `resolution/missing`  in case of a "Contact us" escalation.
+ - `resolution/answer/handover` in case of a handover
+ - `titlebar` if the user clicked the escalation button in the titlebar (if it's enabled)
 
 In the event of a `titlebar` escalation, `actions` & `text` won't exist.
 
@@ -51,16 +52,16 @@ Notice how we add our callbacks after the event `load` of our script is called.
         d.getElementsByTagName('head')[0].appendChild(j);
 
         j.addEventListener('load', () => {
-          kare.onClose(function(orgId) {
+          kare.onClose(function(callbackEvent) {
             console.log('my custom onClose callback');
           });
-          kare.onEscalate(function(orgId) {
+          kare.onEscalate(function(callbackEvent, messageBody) {
             console.log('my custom onEscalate callback');
           });
-          kare.onOpen(function(orgId) {
+          kare.onOpen(function(callbackEvent) {
             console.log('my custom onOpen callback');
           });          
-          kare.onBeforeSocketOpen(function(orgId) {
+          kare.onBeforeSocketOpen(function(callbackEvent) {
             console.log('my custom onBeforeSocketOpen callback');
           });
         });
