@@ -38,6 +38,7 @@ Configuration options to pass to `window.GLR` before widget setup.
 | customHeaders   |   Object  | Send down custom headers to the backend so add metadata to your customers’ conversations. Only custom headers that start with “kare-meta-” will be accepted. Any headers that do not follow this pattern will be ignored and will not be sent. Optional. |
 | query | string | Starting query the widget will send when opened |
 | welcomeMessageId | string | Id of the response that the widget will welcome the user when its opened and connected |
+| showPopoverAfter | int | Number of seconds for the popup to appear. Defaul 3 seconds |
 
 If query or welcomeMessageId are configured at the level of `window.GLR` object, the widget will send the query or welcome with that response every time the user opens a new session. In case you prefer to configure this behavior dynamically in function of the actions of the user you could use the method [`open` from the API](#API)
 
