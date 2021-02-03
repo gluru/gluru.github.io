@@ -78,7 +78,14 @@ The Javascript SDK allows web developers to control the widget programmatically.
 | onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
 | onEscalate(callback)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
 | addBeacon(beaconConfigurationObject)  | method  | Register a beacon to the SDK. [More information](./beacons.md) |
+| setUserProfileTags(tags, forceRefresh) | method | Overrides the user profile tags. First parameter expects an array of strings, second (optional) is a boolean to trigger a forced refresh.
 
+## Example usage of setUserProfileTags
+```javascript
+window.kare.setUserProfileTags(['first-tag', 'second-tag']) // This won't trigger a refresh, so the current conversation will still use the previous tags
+window.kare.setUserProfileTags(['first-tag', 'second-tag'], true) // This will set the tags and also will trigger a forced refresh, opening a new conversation
+
+```
 
 ## Launching the widget programmatically with Javascript.
 
