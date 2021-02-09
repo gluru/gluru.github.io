@@ -76,7 +76,7 @@ The Javascript SDK allows web developers to control the widget programmatically.
 | hideLauncher()  | method  | Hide the widget launcher |
 | onClose(callback)  | method  | Calls the callback that has been passed as an argument when the widget is closed. We send the conversation ID as a parameter to the callback method. Example: `kare.onClose(function(event){console.log('my custom close callback')})`. This will log ‘my custom close callback’ |
 | onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
-| onEscalate(callback)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
+| onEscalate(callback, message)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
 | addBeacon(beaconConfigurationObject)  | method  | Register a beacon to the SDK. [More information](./beacons.md) |
 | setUserProfileTags(tags, forceRefresh) | method | Overrides the user profile tags. First parameter expects an array of strings, second (optional) is a boolean to trigger a forced refresh.
 
@@ -131,7 +131,7 @@ window.addEventListener('load', ()=>{
 
 ```javascript
 window.addEventListener('load', ()=>{
-    window.kare.onEscalate(event => {
+    window.kare.onEscalate((event, message) => {
       console.log(`open zoppin with conversation id 
         ${event.conversationId}`);
     });
