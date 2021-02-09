@@ -138,21 +138,19 @@ window.addEventListener('load', ()=>{
 })
 ```
 
-Example of an onEscalate using the userId to open Zoppin, the Zendesk chat app.
+Example of an onEscalate using the message aspect to perform different actions.
 
-The userID can be obtained from `window.GLR.userId`
 
 ```javascript
 window.addEventListener('load', ()=>{
-    window.kare.onEscalate(event => {
+    window.kare.onEscalate((event, message) => {
+      if (message.aspect === 'resolution/missing') {
+        // perform action
+      } else {
+        // perform different action
+      }
         const zopim = window.$zopim
-        if (zopim) {
-          window.kare.close();
-          window.kare.hideLauncher();
-          // Set userID to zopim.
-          // Its accessible from window.GLR.userId
-          return zopim.livechat.window.show();
-        }
+      
     });
 })
 ```
