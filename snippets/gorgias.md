@@ -5,6 +5,9 @@
  3. Customize the Kare script as follows.
 
 
+Fore more information about how to customize your Gorgias integration please check the [Gorgias' advanced settings page](https://docs.gorgias.com/gorgias-chat/advanced-customization-new-chat).
+
+
 ```
 func hideGorgias() {
   var gor = document.getElementById("chat-button");
