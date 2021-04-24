@@ -41,6 +41,7 @@ Customers can extend the platform by creating
 [custom data fetchers](./custom-fetchers) to import data from sources that are
 not yet officially supported or to implement custom features.
 
+Importing files from [Box](./integrations/box/oauth).
 
 For security purposes, if required by your network configuration, it is also
 possible to [white-list Kare's fetchers IP](./whitelisting).
