@@ -78,7 +78,8 @@ The Javascript SDK allows web developers to control the widget programmatically.
 | onOpen(callback)  | method  | Open event, triggered with a callbackEvent when the widget is opened by a user. |
 | onEscalate(callback, message)  | method  | Escalate event, triggered is the user clicks on any escalation button. |
 | addBeacon(beaconConfigurationObject)  | method  | Register a beacon to the SDK. [More information](./beacons.md) |
-| setUserProfileTags(tags, forceRefresh) | method | Overrides the user profile tags. First parameter expects an array of strings, second (optional) is a boolean to trigger a forced refresh.
+| setUserProfileTags(tags, forceRefresh) | method | Overrides the user profile tags. First parameter expects an array of strings, second (optional) is a boolean to trigger a forced refresh. |
+| host_locale | Override user locale with the current website locale. |
 
 ## Example usage of setUserProfileTags
 ```javascript
