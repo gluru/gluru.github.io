@@ -3,7 +3,7 @@
 
 Please follow these integration steps:
 1. make sure that Hubspot is correctly integrated
-2. Load the following script. Feel fre to customize it as needed.
+2. Load the following script. Customize it as needed.
 
 For more information see [Hubspot developer portal](https://developers.hubspot.com/docs/api/conversation/chat-widget-sdk)
 
