@@ -9,7 +9,7 @@ Fore more information about how to customize your Gorgias integration please che
 
 
 ```
-func hideGorgias() {
+function hideGorgias() {
   var gor = document.getElementById("chat-button");
   gor.style.display = "none"
 }
