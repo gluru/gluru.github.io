@@ -23,7 +23,6 @@ function showIntercom() {
 
 window.GLR = {
     appId: '<APP-ID>',
-    host_locale: 'en-SG'
 };
 (function (w, d, s) {
     var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
