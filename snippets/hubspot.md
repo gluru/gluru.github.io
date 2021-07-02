@@ -2,17 +2,37 @@
 # Hubspot
 
 Please follow these integration steps:
-1. make sure that Hubspot is correctly integrated
-2. Load the following script. Customize it as needed.
+1. Customize the following script as needed to fit your requirements.
+2. Load this script before Hubspot in order to properly set the initialization parameters. See [Preventing Hubspot from loading immediately](https://community.hubspot.com/t5/APIs-Integrations/Prevent-bot-from-loading-immediately/m-p/297539).
+3. Load Hubspot chat.
 
 For more information see [Hubspot developer portal](https://developers.hubspot.com/docs/api/conversation/chat-widget-sdk)
 
 
 ```javascript
+// Configure hubspot to load without displaying the FAB.
+// This should ideally be executed before Hubspot.
+if (window.HubSpotConversations) {
+    indow.hsConversationsSettings = {
+        loadImmediately: false,
+    };
+ }else {
+    window.hsConversationsOnReady = [
+        () => {
+            window.hsConversationsSettings = {
+                loadImmediately: false,
+            };
+        },
+    ];
+}
+
+
+// Hide Hubspot when needed. 
 function hideHubspot() {
     window.HubSpotConversations.widget.remove();
 }
 
+// Show Hubspot when needed. 
 function loadHubspot(open) {
     window.HubSpotConversations.widget.load({
         widgetOpen: open
@@ -54,3 +74,4 @@ window.GLR = {
     });
 })(window, document, 'script');
 ```
+
