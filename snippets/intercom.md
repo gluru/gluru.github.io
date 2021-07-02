@@ -22,7 +22,7 @@ function showIntercom() {
 }
 
 window.GLR = {
-    appId: '<APP-ID>',
+    appId: '<APP-ID>'
 };
 (function (w, d, s) {
     var j = document.createElement(s); j.async = 1; j.type = 'text/javascript'; j.src = 'https://widget.eu.karehq.com/latest.js';
