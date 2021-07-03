@@ -54,6 +54,11 @@ Our research is available through our [research lab](https://www.researchgate.ne
 
 It's possible to receive live status updates by subscring to our [status page](https://karehq.statuspage.io/).
 
+# SDK Code Recipes
+
+Here you can find different code recipes to modify the widget behaviour such as only showing the launcher at certain
+time intervals
+
 
 <script>
   window.GLR = {
